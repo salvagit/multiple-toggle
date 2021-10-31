@@ -8,7 +8,7 @@ const CLEAR = "clear";
 export type ButtonInterface = {
   title: string;
   onClick: () => {};
-  type?: string;
+  type?: string | Object;
   className?: string;
 };
 

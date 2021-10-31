@@ -1,5 +1,5 @@
 import logo from "../../assets/images/logo.svg";
-import Button from "../button";
+import Toggle from "../Toggle";
 
 import "./App.scss";
 
@@ -12,11 +12,27 @@ function App() {
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
 
-        <Button
-          className="App-link"
-          onClick={() => (window.location.href = "https://reactjs.org")}
-          title="Learn More"
-          type="clear"
+        <Toggle
+          buttons={[
+            {
+              className: "App-link",
+              onClick: () => (window.location.href = "https://reactjs.org"),
+              title: "Learn More",
+              type: "clear",
+            },
+            {
+              className: "App-link",
+              onClick: () => (window.location.href = "https://reactjs.org"),
+              title: "Learn More",
+              type: "clear",
+            },
+            {
+              className: "App-link",
+              onClick: () => (window.location.href = "https://reactjs.org"),
+              title: "Learn More",
+              type: "clear",
+            },
+          ]}
         />
       </header>
     </div>
