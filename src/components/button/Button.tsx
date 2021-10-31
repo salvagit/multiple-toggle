@@ -7,9 +7,10 @@ const CLEAR = "clear";
 
 export type ButtonInterface = {
   title: string;
-  onClick: () => {};
+  onClick: () => void;
   type?: string | Object;
   className?: string;
+  selected?: boolean;
 };
 
 const Button: FunctionComponent<ButtonInterface> = ({
@@ -17,12 +18,14 @@ const Button: FunctionComponent<ButtonInterface> = ({
   onClick,
   type,
   className,
+  selected,
 }) => {
   return (
     <div className={styles.wrapper}>
       <button
         className={cn(styles.wrapper, className, {
           [styles["button--clear"]]: type === CLEAR,
+          [styles["button--selected"]]: selected,
         })}
         onClick={onClick}
       >

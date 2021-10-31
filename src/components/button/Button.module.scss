@@ -1,3 +1,5 @@
+$blue: #6adafb;
+
 .wrapper {
   margin: 8px 20px;
 }
@@ -6,6 +8,10 @@
   &--clear {
     background: transparent;
     border: 0;
-    color: #000;
+    color: $blue;
+  }
+
+  &--selected {
+    border: 1px solid $blue;
   }
 }
