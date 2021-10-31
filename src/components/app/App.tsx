@@ -1,5 +1,6 @@
-import React from "react";
 import logo from "../../assets/images/logo.svg";
+import Button from "../button";
+
 import "./App.scss";
 
 function App() {
@@ -10,14 +11,13 @@ function App() {
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
-        <a
+
+        <Button
           className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+          onClick={() => (window.location.href = "https://reactjs.org")}
+          title="Learn More"
+          type="clear"
+        />
       </header>
     </div>
   );

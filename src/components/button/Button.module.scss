@@ -1,0 +1,11 @@
+.wrapper {
+  margin: 8px 20px;
+}
+
+.button {
+  &--clear {
+    background: transparent;
+    border: 0;
+    color: #000;
+  }
+}
