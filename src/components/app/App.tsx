@@ -16,20 +16,20 @@ function App() {
           buttons={[
             {
               className: "App-link",
-              onClick: () => (window.location.href = "https://reactjs.org"),
-              title: "Learn More",
+              // onClick: () => (window.location.href = "https://reactjs.org"),
+              title: "Toggle 1",
               type: "clear",
             },
             {
               className: "App-link",
-              onClick: () => (window.location.href = "https://reactjs.org"),
-              title: "Learn More",
+              // onClick: () => (window.location.href = "https://reactjs.org"),
+              title: "Toggle 2",
               type: "clear",
             },
             {
               className: "App-link",
-              onClick: () => (window.location.href = "https://reactjs.org"),
-              title: "Learn More",
+              // onClick: () => (window.location.href = "https://reactjs.org"),
+              title: "Toggle 3",
               type: "clear",
             },
           ]}

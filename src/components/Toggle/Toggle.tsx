@@ -1,5 +1,6 @@
 import { FunctionComponent, useMemo, useState } from "react";
 import Button, { ButtonInterface } from "../Button";
+import cn from "classnames";
 
 import style from "./Toggle.module.scss";
 
@@ -14,16 +15,25 @@ const Toggle: FunctionComponent<ToggleInterface> = ({ buttons }) => {
     return buttons.map((props, index) => (
       <Button
         {...props}
-        selected={selected === index}
         onClick={() => {
-          // props?.onClick();
+          props.onClick?.();
           setSelected(index);
         }}
       />
     ));
-  }, [buttons, selected]);
+  }, [buttons]);
 
-  return <div className={style.wrapper}>{toggles}</div>;
+  return (
+    <div
+      className={cn(style.wrapper, {
+        [style["wrapper--first"]]: selected === 0,
+        [style["wrapper--middle"]]: selected === 1,
+        [style["wrapper--last"]]: selected === 2,
+      })}
+    >
+      {toggles}
+    </div>
+  );
 };
 
 export default Toggle;

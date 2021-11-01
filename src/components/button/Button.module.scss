@@ -1,17 +1,15 @@
-$blue: #6adafb;
+@import "./button-vars.scss";
 
 .wrapper {
-  margin: 8px 20px;
+  margin: $button-margin-vertical $button-margin-horizontal;
 }
 
 .button {
+  width: $button-size;
+
   &--clear {
     background: transparent;
     border: 0;
     color: $blue;
-  }
-
-  &--selected {
-    border: 1px solid $blue;
   }
 }
