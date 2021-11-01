@@ -25,10 +25,11 @@ const Toggle: FunctionComponent<ToggleInterface> = ({ buttons }) => {
 
   return (
     <div
+      data-length={1.5}
       className={cn(style.wrapper, {
         [style["wrapper--first"]]: selected === 0,
         [style["wrapper--middle"]]: selected === 1,
-        [style["wrapper--last"]]: selected === 2,
+        [style["wrapper--last"]]: selected === buttons.length - 1,
       })}
     >
       {toggles}

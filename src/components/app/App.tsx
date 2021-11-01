@@ -32,6 +32,12 @@ function App() {
               title: "Toggle 3",
               type: "clear",
             },
+            {
+              className: "App-link",
+              // onClick: () => (window.location.href = "https://reactjs.org"),
+              title: "Toggle 4",
+              type: "clear",
+            },
           ]}
         />
       </header>
