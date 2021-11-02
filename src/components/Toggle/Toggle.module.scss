@@ -6,15 +6,16 @@ $button-with-margins: calc(#{$button-size} + #{$margins});
 $anim-bezier: cubic-bezier(1, -0.18, 0.39, 1.27);
 $anim-duration: 500ms;
 
+$multiplier: var(--selected);
+
 .wrapper {
   margin: 4px 20px;
-
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
 
-  --selector-position: calc(#{$button-with-margins} * -1);
+  --selector-position: calc(((#{$button-with-margins} * #{$multiplier}) * -1));
 
   &::before {
     content: "";
@@ -29,18 +30,6 @@ $anim-duration: 500ms;
     transform: translate(var(--selector-position), $button-margin-vertical);
 
     transition: transform $anim-bezier $anim-duration;
-  }
-
-  &--first {
-    --selector-position: calc(#{$button-with-margins} * -1);
-  }
-
-  &--middle {
-    --selector-position: 0px;
-  }
-
-  &--last {
-    --selector-position: #{$button-with-margins};
   }
 }
 
