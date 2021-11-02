@@ -1,6 +1,5 @@
 import { FunctionComponent, useMemo, useState } from "react";
 import Button, { ButtonInterface } from "../Button";
-import cn from "classnames";
 
 import style from "./Toggle.module.scss";
 
@@ -9,7 +8,14 @@ export type ToggleInterface = {
 };
 
 const Toggle: FunctionComponent<ToggleInterface> = ({ buttons }) => {
-  const [selected, setSelected] = useState(-1);
+
+  const buttonStartingPosition = useMemo( () => {
+    return 0.5 * buttons.length - 0.5;
+  }, [buttons])
+
+  const [selected, setSelected] = useState(buttonStartingPosition);
+  
+  const selectedCSSVariable = {"--selected": selected} as React.CSSProperties;
 
   const toggles = useMemo(() => {
     return buttons.map((props, index) => (
@@ -17,21 +23,14 @@ const Toggle: FunctionComponent<ToggleInterface> = ({ buttons }) => {
         {...props}
         onClick={() => {
           props.onClick?.();
-          setSelected(index);
+          setSelected(buttonStartingPosition - index);
         }}
       />
     ));
-  }, [buttons]);
+  }, [buttons, buttonStartingPosition]);
 
   return (
-    <div
-      data-length={1.5}
-      className={cn(style.wrapper, {
-        [style["wrapper--first"]]: selected === 0,
-        [style["wrapper--middle"]]: selected === 1,
-        [style["wrapper--last"]]: selected === buttons.length - 1,
-      })}
-    >
+    <div style={selectedCSSVariable} className={style.wrapper} >
       {toggles}
     </div>
   );
